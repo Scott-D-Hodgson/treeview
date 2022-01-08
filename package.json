@@ -1,0 +1,31 @@
+{
+  "name": "treeview",
+  "version": "1.0.0",
+  "description": "Vanilla JavaScript Tree View",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scott-D-Hodgson/treeview.git"
+  },
+  "keywords": [
+    "vanilla",
+    "javascript",
+    "tree",
+    "view"
+  ],
+  "author": "Scott-D-Hodgson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Scott-D-Hodgson/treeview/issues"
+  },
+  "homepage": "https://github.com/Scott-D-Hodgson/treeview#readme",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.1"
+  }
+}

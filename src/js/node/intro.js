@@ -1,0 +1,2 @@
+(function (global) {
+    var Node = {};
