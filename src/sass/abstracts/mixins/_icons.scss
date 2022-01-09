@@ -1,0 +1,85 @@
+@mixin node($theme, $code) {
+    @if $theme != "" {
+        li[theme='#{$theme}'] {
+            > button::before {
+                content: "#{$code}";
+            }
+        }
+    } @else {
+        li:not([theme]) > button::before {
+          content: "#{$code}";
+        }
+    }
+}
+
+@mixin expandnode($theme, $expandedcode, $collapsedcode) {
+    @if $theme != "" {
+        li[type='expand'][theme='#{$theme}'][aria-expanded='true'] {
+            > button[type='toggle']::before {
+                content: "#{$expandedcode}";
+            }
+        }
+        li[type='expand'][theme='#{$theme}'][aria-expanded='false'] {
+            > button[type='toggle']::before {
+                content: "#{$collapsedcode}";
+            }
+        }
+        li[type='expand'][theme='#{$theme}']:not([aria-expanded]) {
+            > button[type='toggle']::before {
+                content: "#{$collapsedcode}";
+            }
+        }
+    } @else {
+        li[type='expand'][aria-expanded='true']:not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$expandedcode}";
+            }
+        }
+        li[type='expand'][aria-expanded='false']:not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$collapsedcode}";
+            }
+        }
+        li[type='expand']:not([aria-expanded]):not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$collapsedcode}";
+            }
+        }
+    }
+}
+
+@mixin checknode($theme, $checkedcode, $uncheckedcode) {
+    @if $theme != "" {
+        li[type='check'][theme='#{$theme}'][checked='true'] {
+            > button[type='toggle']::before {
+                content: "#{$checkedcode}";
+            }
+        }
+        li[type='check'][theme='#{$theme}'][checked='false'] {
+            > button[type='toggle']::before {
+                content: "#{$uncheckedcode}";
+            }
+        }
+        li[type='check'][theme='#{$theme}']:not([checked]) {
+            > button[type='toggle']::before {
+                content: "#{$uncheckedcode}";
+            }
+        }
+    } @else {
+        li[type='check'][checked='true']:not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$checkedcode}";
+            }
+        }
+        li[type='check'][checked='false']:not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$uncheckedcode}";
+            }
+        }
+        li[type='check']:not([checked]):not([theme]) {
+            > button[type='toggle']::before {
+                content: "#{$uncheckedcode}";
+            }
+        }
+    }
+}
