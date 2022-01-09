@@ -1,0 +1,28 @@
+ul[type='tree'] {
+    @include node("", "\f15b");
+    @include node("file", "\f15b");
+    @include node("file-audio", "\f1c7");
+    @include node("file-video", "\f1c8");
+    @include node("file-word", "\f1c2");
+    @include node("file-excel", "\f1c3");
+    @include node("file-csv", "\f6dd");
+    @include node("file-pdf", "\f1c1");
+    @include node("file-powerpoint", "\f1c4");
+    @include checknode("", "", "\f00c");
+    @include checknode("check", "", "\f00c");
+    @include checknode("check-square", "\f14a", "\f0c8");
+    @include checknode("check-circle", "\f058", "\f111");
+    @include checknode("yesno", "\f00c", "\f00d");
+    @include checknode("yesno-square", "\f14a", "\f2d3");
+    @include checknode("yesno-circle", "\f058", "\f057");
+    @include expandnode("", "\f07c", "\f07b");
+    @include expandnode("caret", "\f0d7", "\f0da");
+    @include expandnode("caret-square", "\f150", "\f152");
+    @include expandnode("caret-circle", "\f32d", "\f330");
+    @include expandnode("chevron", "\f078", "\f054");
+    @include expandnode("chevron-square", "\f329", "\f32b");
+    @include expandnode("plusminus", "\f068", "\f067");
+    @include expandnode("plusminus-square", "\f146", "\f0fe");
+    @include expandnode("plusminus-circle", "\f056", "\f055");
+    @include expandnode("folder", "\f07c", "\f07b");
+}

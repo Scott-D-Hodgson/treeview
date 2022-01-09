@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+    const sass = require("node-sass");
+    require("load-grunt-tasks")(grunt);
 
     // Project configuration.
     grunt.initConfig({
@@ -18,6 +20,25 @@ module.exports = function(grunt) {
           dest: "build/js/tree.js",
         }
       },
+      csslint: {
+        all: {
+          options: {
+            import: 2
+          },
+          src: ["build/css/treeview.css"]
+        }
+      },
+      cssmin: {
+        options: {
+          mergeIntoShorthands: false,
+          roundingPrecision: -1
+        },
+        all: {
+          files: {
+            "build/css/treeview.min.css": ["build/css/treeview.css"]
+          }
+        }
+      },
       jshint: {
         options: {
           curly: true,
@@ -29,6 +50,17 @@ module.exports = function(grunt) {
         all: ["build/js/treeview.js"],
         node: ["build/js/node.js"],
         tree: ["build/js/tree.js"]
+      },
+      sass: {
+        options: {
+            implementation: sass,
+            sourceMap: true
+        },
+        all: {
+          files: {
+              "build/css/treeview.css": "src/sass/main.scss"
+          }
+        }
       },
       uglify: {
         options: {
@@ -51,6 +83,8 @@ module.exports = function(grunt) {
   
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-concat");
+    grunt.loadNpmTasks("grunt-contrib-csslint");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-uglify");
   
@@ -59,5 +93,5 @@ module.exports = function(grunt) {
     grunt.registerTask("reset", ["clean"]);
     grunt.registerTask("node", ["concat:node", "jshint:node", "uglify:node"]);
     grunt.registerTask("tree", ["concat:tree", "jshint:tree", "uglify:tree"]);
-    grunt.registerTask("all", ["concat:all", "jshint:all", "uglify:all"]);
+    grunt.registerTask("all", ["concat:all", "jshint:all", "uglify:all", "sass:all", "csslint:all", "cssmin:all"]);
   };
