@@ -1,5 +1,5 @@
     if (!global.hasOwnProperty("sdh")) {
         global.sdh = {};
     }
-    global.sdh.Node = Node;
+    global.sdh.Variables = Variables;
 }(window));

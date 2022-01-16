@@ -1,5 +1,5 @@
     if (!global.hasOwnProperty("sdh")) {
         global.sdh = {};
     }
-    global.sdh.tree = Tree;
+    global.sdh.Tree = Tree;
 }(window));

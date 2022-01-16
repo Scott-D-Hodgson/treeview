@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Tree View Demo</title>
+        <link rel="stylesheet" href="..\build\css\treeview.css"/>
+        <script type="text/javascript" src="..\build\js\treeview.js"></script>
+    </head>
+    <body>
+        <h1>Tree View Demo</h1>
+        <ul id="tree"></ul>
+        <script id="source">
+            let _var = sdh.Variables();
+            // Single variable addition
+            _var.Add(1, "one");
+            // Chained variable addition
+            _var.Add(2, "two").Add(3, "three");
+            let _alt = sdh.Variables();
+            // Single variable addition
+            _var.Add(4, "four");
+            // Chained variable addition
+            _var.Add(5, "five").Add(6, "six");            
+        </script>
+        <pre id="script">
+        </pre>
+        <div id="collection"></div>
+        <script>
+            let script = document.getElementById("script");
+            let source = document.getElementById("source");
+            script.innerHTML = source.innerHTML;
+            let collection = document.getElementById("collection");
+            collection.innerHTML = JSON.stringify(sdh.Variables.prototype.collection);
+        </script>
+    </body>
+</html>
