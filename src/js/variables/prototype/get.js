@@ -1,4 +1,4 @@
-Variables.prototype.Get = function(name) {
+Variables.prototype.get = function(name) {
     if (!Variables.prototype.collection.hasOwnProperty(name)) {
         return null;
     }
