@@ -8,7 +8,17 @@ module.exports = function(grunt) {
       clean: ["build"],
       concat: {
         all: {
-          src: ["src/js/variables/intro.js", "src/js/variables/object.js", "src/js/variables/prototype/*.js", "src/js/variables/outro.js", "src/js/node/intro.js", "src/js/node/outro.js", "src/js/tree/intro.js", "src/js/tree/outro.js"],
+          src: [
+              "src/js/variables/intro.js", 
+              "src/js/variables/object.js", 
+              "src/js/variables/prototype/*.js", 
+              "src/js/variables/outro.js", 
+              "src/js/node/intro.js", 
+              "src/js/node/outro.js", 
+              "src/js/tree/intro.js", 
+              "src/js/tree/object.js", 
+              "src/js/tree/outro.js"
+            ],
           dest: "build/js/treeview.js",
         },
         node: {
